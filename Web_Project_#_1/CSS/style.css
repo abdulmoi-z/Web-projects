@@ -1,0 +1,245 @@
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* CSS vaiables  */
+:root {
+    --navbar--height: 59px;
+}
+
+/* Navigation bar alignment*/
+#navbar {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0px;
+}
+/* navigation bar effects  */
+#navbar::before {
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 80%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+/* Navigation bar: logo and image alighnment*/
+#logo {
+    margin: 20px 20px;
+}
+
+#logo img {
+    border: 2px;
+    border-radius: 79px;
+    height: 56px;
+    margin: 20px 20px;
+}
+
+/* Navigation bar: List styling */
+/* navigation bar list aligned straight */
+#navbar ul {
+    display: flex;
+    font-family: "Inter", sans-serif;
+}
+
+/* each element of list set to font */
+#navbar ul li {
+    list-style: none;
+    font-size: 1.3rem;
+    font-family: "Bree Serif", sans-serif;
+}
+
+/*navigation bar: anchor tags aligned */
+#navbar ul li a {
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+/* hover effects on the anchor tags of unordered list elements*/
+#navbar ul li a:hover {
+    color:#5d0937;
+    background-color: white;
+}
+
+/* Home section */
+#home {
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    height: 547px;
+    justify-content: center;
+    align-items: center;
+    font-family: "Bree Serif", sans-serif;
+}
+/* adding background image of home page */
+#home::before {
+    content: "";
+    background: url(../bg.jpg) no-repeat center center/cover;
+    position: absolute;
+    height: 642px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.75;
+}
+/* heading color and alignment */
+#home h1 {
+    color: #5d0937;
+    text-align: center;
+    font-family: "Bree Serif", sans-serif;
+}
+
+#home p {
+    color: #470b2c;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Services section */
+#services {
+    margin: 35px;
+    display: flex;
+}
+
+/* Making border of box */
+#services .box {
+    border: 2px solid black;
+    padding: 34px;
+    margin: 3px 6px;
+    border-radius: 100px;
+    background-color: rgba(201, 215, 223, 0.397);
+}
+
+/* aligning the image inside box */
+#services .box img {
+    height: 160px;
+    margin: auto;
+    display: block;
+}
+
+/* the paragraphs i the box */
+#services .box p {
+    font-family: 'Inter';
+    color: #470b2c;
+}
+
+/* Clients section */
+/* section height */
+#client-section {
+    height: 401px;
+    position: relative;
+}
+
+#client-section::before {
+    content: "";
+    position: absolute;
+    background: url('/bg1.jpg');
+    background-size: 430px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* clients division */
+#clients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clients img {
+    height: 150px;
+}
+
+.client-items {
+    padding: 60px;
+}
+/* Contact section */
+#contact{
+    position: relative;
+}
+/* background section size */
+#contact::before{
+    content: "";
+    position: absolute;
+    background: url(../contact1.jpg) no-repeat center center/cover;
+    background-size: 1350px 541px;
+    width: 100%;    
+    height: 100%;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+#contact-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 34px;
+}
+
+#contact-box input,
+#contact-box textarea{
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+#contact-box form{
+    width: 40%;
+} 
+#contact-box label{
+    font-size: 1.3rem;
+    font-family: 'Inter';
+}
+
+footer{
+    background: black;
+    color: white;
+    padding: 9px 20px;
+
+}
+/* utility classes */
+/* center class */
+.center {
+    text-align: center;
+}
+
+/* home class */
+.h-primary {
+    font-size: 3.5rem;
+    font-family: "Bree Serif", sans-serif;
+    padding: 28px;
+    color: #5d0937;
+}
+
+.h-secondary {
+    font-family: "Bree Serif", sans-serif;
+    font-size: 2.2 rem;
+    padding: 12px;
+    color:#5d0937;
+}
+
+/* button class */
+.btn {
+    padding: 6px 20px;
+    border: -4px black;
+    background-color: rgba(214, 207, 195, 0.801);
+    color: black;
+    font-size: 1.5rem;
+    margin: 17px;
+    border-radius: 100px;
+    cursor: pointer;
+}
