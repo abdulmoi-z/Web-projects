@@ -38,12 +38,10 @@ nav li{
     color: white;
     font-family: "Inter", sans-serif;
     background: url("bg3.jpg");
-    background-position-x: center;
-    background-position-y:center;
     background-repeat: no-repeat;
-    background-position: top right;
+    background-position: right;
     background-color: #00000090;
-    background-size: 320px;
+    background-size: 468px;
     display: flex;
     width: 70%;
     margin: 25px auto;
@@ -70,25 +68,43 @@ nav li{
     cursor: pointer;
 }
 
-#progressbar{
+input#MyProgressBar {
     width: 80vw;
 }
 
 .SongItem{
-    height: 50px;
+    height: 35px;
     display: flex;
-    width: 100%;
+    width: 90%;
     background-color: rgba(102, 111, 117, 0.233);
     color: white;
     justify-content: space-between;
     align-items: center;
     border-radius: 15px;
+    margin: 4px 0;
 }
 .SongItem img{
-    width: 40px;
+    width: 30px;
     margin: 0 23px;
-    border-radius: 10px;
+    border-radius: 6px;
+}
+.SongItem i{
+    cursor: pointer;
+}
+.SongItemContainer{
+    margin-top: 50px;
 }
 .TimeStamp{
     margin: 0 25px;
+}
+.SongInfo{
+    position: absolute;
+    left: 10vw;
+    top: 40px;
+    padding: 5px;
+    background-color: rgba(240, 248, 255, 0.315);
+}
+.SongInfo img{
+    opacity: 1;
+    transition: opacity 0.4s ease-in ;
 }
