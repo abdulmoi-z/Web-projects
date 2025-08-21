@@ -24,7 +24,7 @@ let songs = [
 SongItems.forEach((element, i) => {
     element.getElementsByTagName("img")[0].src = songs[i].CoverPath;
     element.getElementsByClassName("SongName")[0].innerText = songs[i].SongName;
-    //element.getElementsByClassName("TimeStamp")[0].innerText = songs [i].SongDuration;
+    element.getElementsByClassName("duration")[0].innerText = songs [i].SongDuration;
 })
 // handle play pause click
 MasterPlay.addEventListener('click', () => {
