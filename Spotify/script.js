@@ -7,6 +7,8 @@ let MyProgressBar = document.getElementById('MyProgressBar');
 let gif = document.getElementById('gif');
 let MasterSongName = document.getElementById('MasterSongName');
 let SongItems = Array.from(document.getElementsByClassName('SongItem'));
+
+// list of the song name , paths to the songs aand cover images 
 let songs = [
     { SongName: "1. Gardish", FilePath: "Khana Badosh/1.mp3", CoverPath: "cover.jpeg", SongDuration: "6:02" },
     { SongName: "2. Darja hararat", FilePath: "Khana Badosh/2.mp3", CoverPath: "cover.jpeg", SongDuration: "3:55" },
@@ -21,27 +23,40 @@ let songs = [
     { SongName: "11. Mutaasir", FilePath: "Khana Badosh/11.mp3", CoverPath: "cover.jpeg", SongDuration: "5:34" },
     { SongName: "12. Iltija", FilePath: "Khana Badosh/12.mp3", CoverPath: "cover.jpeg", SongDuration: "5:18" },
 ]
+
+// filling in the name of the songs and their durations on the display
 SongItems.forEach((element, i) => {
     element.getElementsByTagName("img")[0].src = songs[i].CoverPath;
     element.getElementsByClassName("SongName")[0].innerText = songs[i].SongName;
-    element.getElementsByClassName("duration")[0].innerText = songs [i].SongDuration;
+    element.getElementsByClassName("duration")[0].innerText = songs[i].SongDuration;
 })
+
 // handle play pause click
+//controlling the main pause play button on the progess bar at the bottom
 MasterPlay.addEventListener('click', () => {
+    //condition to identify that the song is paused of not playing
     if (AudioElement.paused || AudioElement.currentTime <= 0) {
+        //playing the song in case the condition is true
         AudioElement.play();
+        //replacing play button with pause
         MasterPlay.classList.remove('fa-play');
         MasterPlay.classList.add('fa-pause');
+        // displaying the playing gif
         gif.style.opacity = 1;
     }
     else {
+        // if the song is playing then pausing it on click
         AudioElement.pause();
+        //replacing the pause button with play button
         MasterPlay.classList.remove('fa-pause');
         MasterPlay.classList.add('fa-play');
+        //hiding the gifs
         gif.style.opacity = 0;
     }
 })
-//listen to evemts
+
+//listen to events
+//tracking the time of the song
 AudioElement.addEventListener('timeupdate', () => {
     //update seekbar
     progress = parseInt((AudioElement.currentTime / AudioElement.duration) * 100);
@@ -53,27 +68,67 @@ MyProgressBar.addEventListener('change', () => {
 const MakeAllPlays = () => {
     Array.from(document.getElementsByClassName('SongItemPlay')).forEach((element) => {
         element.classList.remove('fa-pause');
-        element.classList.add('fa-play');
+        element.classList.add('fa-play');   
+        gif.style.opacity = 0;
     })
 }
-Array.from(document.getElementsByClassName('SongItemPlay')).forEach((element) => {
+/*Array.from(document.getElementsByClassName('SongItemPlay')).forEach((element) => {
     element.addEventListener('click', (e) => {
         MakeAllPlays();
         SongIndex = parseInt(e.target.id);
         MasterSongName.innerText = songs[SongIndex].SongName;
         e.target.classList.remove('fa-play');
         e.target.classList.add('fa-pause');
-        //AudioElement.src = 'Khana Badosh/10_Raabta.mp3';
         AudioElement.src = `Khana Badosh/${SongIndex + 1}.mp3`;
         AudioElement.currentTime = 0;
         AudioElement.play();
         gif.style.opacity = 1;
         MasterPlay.classList.remove('fa-play');
         MasterPlay.classList.add('fa-pause');
-    })
-})
+    });
+});*/
+Array.from(document.getElementsByClassName('SongItemPlay')).forEach((element) => {
+    element.addEventListener('click', (e) => {
+        let SongIndex = parseInt(e.target.id);
+
+        // Case 1: Clicking the same button while playing → PAUSE
+        if (AudioElement.src.includes(`${SongIndex+1}.mp3`) && !AudioElement.paused) {
+            AudioElement.pause();
+            e.target.classList.remove('fa-pause');
+            e.target.classList.add('fa-play');
+            MasterSongName.innerText = songs[SongIndex].SongName;
+            gif.style.opacity = 0;
+            MasterPlay.classList.remove('fa-pause');
+        MasterPlay.classList.add('fa-play');
+        }
+        // Case 2: Clicking same button while paused → RESUME
+        else if (AudioElement.src.includes(`${SongIndex+1}.mp3`) && AudioElement.paused) {
+            AudioElement.play();
+            e.target.classList.remove('fa-play');
+            e.target.classList.add('fa-pause');
+            gif.style.opacity = 1;
+            MasterPlay.classList.remove('fa-play');
+        MasterPlay.classList.add('fa-pause');
+        }
+        // Case 3: Clicking a different song → Load & Play new one
+        else {
+            MakeAllPlays(); // reset all icons
+            e.target.classList.remove('fa-play');
+            e.target.classList.add('fa-pause');
+            MasterSongName.innerText = songs[SongIndex+1].SongName;
+
+            AudioElement.src = `Khana Badosh/${SongIndex+1}.mp3`;
+            AudioElement.currentTime = 0;
+            AudioElement.play();
+            MasterPlay.classList.remove('fa-play');
+        MasterPlay.classList.add('fa-pause');
+            gif.style.opacity = 1;
+        }
+    });
+});
+
 document.getElementById('next').addEventListener('click', () => {
-    if (SongIndex > 11) {
+    if (SongIndex >= 11) {
         SongIndex = 0;
     }
     else {
@@ -85,6 +140,7 @@ document.getElementById('next').addEventListener('click', () => {
     AudioElement.play();
     MasterPlay.classList.remove('fa-play');
     MasterPlay.classList.add('fa-pause');
+    gif.style.opacity = 1;
 })
 document.getElementById('previous').addEventListener('click', () => {
     if (SongIndex <= 0) {
@@ -99,4 +155,8 @@ document.getElementById('previous').addEventListener('click', () => {
     AudioElement.play();
     MasterPlay.classList.remove('fa-play');
     MasterPlay.classList.add('fa-pause');
+    gif.style.opacity = 1;
 })
+AudioElement.addEventListener("ended", () => {
+    gifContainer.style.opacity=0;
+});
