@@ -3,7 +3,6 @@ console.log("Welcome to Spotify");
 //Initialize the variables
 let SongIndex = 0;
 let AudioElement = new Audio('Khana Badosh/1.mp3');
-
 let MasterPlay = document.getElementById('MasterPlay');
 let MyProgressBar = document.getElementById('MyProgressBar');
 let gif = document.getElementById('gif');
@@ -28,16 +27,22 @@ let songs = [
 
 // filling in the name of the songs and their durations on the display
 SongItems.forEach((element, i) => {
+    //setting cover images from list in the songs displaying  container
     element.getElementsByTagName("img")[0].src = songs[i].CoverPath;
+    //setting song names in the container
     element.getElementsByClassName("SongName")[0].innerText = songs[i].SongName;
+    // setting song duration in the container
     element.getElementsByClassName("duration")[0].innerText = songs[i].SongDuration;
 })
+//setting the current playing song name below the progress bar
 MasterSongName.innerText = songs[SongIndex].SongName;
 
 //helper functions 
 // 1) make all songs to display play button in the list
 const MakeAllPlays = () => {
+    // selecting the class having the icons to select song 
     Array.from(document.getElementsByClassName('SongItemPlay')).forEach((element) => {
+        // replacing pause icon with play icon and hiding the playin gif
         element.classList.remove('fa-pause');
         element.classList.add('fa-play');
         gif.style.opacity = 0;
@@ -45,26 +50,29 @@ const MakeAllPlays = () => {
     resetAllGifs();
 }
 
-// reseting the now playing gif
+//2) reseting the now playing gif inside the song list container
 function resetAllGifs() {
     document.querySelectorAll('.NowPlaying').forEach(img => {
         img.src = "";
         img.style.opacity = 0;
     });
 }
-// setting row icon
+// 3)setting row icons to display playing the current playing song
 function SetRowIcon(index, playing) {
     MakeAllPlays();
+    //selecting the icon through index of the song that is currently playing
     const btn = document.querySelector(`.SongItem i[id="${index}"]`);
+    //replacing the icons of that particular index icon
     if (btn && playing) {
         btn.classList.remove('fa-play');
         btn.classList.add('fa-pause');
     }
 }
 
-//display now playing gif
+// 4)display now playing gif 
 function showGifForSong(index) {
     resetAllGifs();
+    //similarly select the curently playing song through index and displaying gif 
     const row = document.querySelector(`.SongItem i[id="${index}"]`)?.closest('.SongItem');
     const img = row?.querySelector('.NowPlaying');
     if (img) {
@@ -73,9 +81,10 @@ function showGifForSong(index) {
         gif.style.opacity = 1;
     }
 }
-//load and play song
+// 5)load and play song
 function loadAndPlay(index) {
-    SongIndex = index; // update the global (no 'let'!)
+    //from the index playing th audio and updating the names and gifs
+    SongIndex = index;
     AudioElement.src = songs[SongIndex].FilePath;
     MasterSongName.innerText = songs[SongIndex].SongName;
     AudioElement.currentTime = 0;
@@ -117,6 +126,8 @@ MasterPlay.addEventListener('click', () => {
         //hiding the gifs
         gif.style.opacity = 0;
         SetRowIcon(SongIndex, false);
+        //to keep track of what song was being played dispaying the now playing gif
+        showGifForSong(SongIndex);
         resetAllGifs();
     }
 })
@@ -130,21 +141,13 @@ AudioElement.addEventListener('timeupdate', () => {
         MyProgressBar.value = progress;
     }
 })
-
+// updating progress bar in case of changing the progress line
 MyProgressBar.addEventListener('change', () => {
     if (AudioElement.duration > 0) {
         AudioElement.currentTime = (MyProgressBar.value * AudioElement.duration) / 100;
     }
 })
 
-function showGifForSong(songIndex) {
-    resetAllGifs();
-    let songItem = document.querySelector(`.SongItem i[id="${songIndex}"]`).closest('.SongItem');
-    let gifImg = songItem.querySelector('.NowPlaying');
-    gifImg.src = "playing1-unscreen.gif";
-    gifImg.style.opacity = 1;
-    gif.style.opacity = 1;
-}
 
 /*Array.from(document.getElementsByClassName('SongItemPlay')).forEach((element) => {
     element.addEventListener('click', (e) => {
@@ -162,12 +165,15 @@ function showGifForSong(songIndex) {
     });
 });*/
 
+//selection of song based upon clicking icon in the song list
 Array.from(document.getElementsByClassName('SongItemPlay')).forEach((element) => {
     element.addEventListener('click', (e) => {
+        //selecting the id of the icon clicked
         let SongIndex = parseInt(e.target.id);
 
-        // same song toggle
+        // detecting the second click on the already playing song
         if (AudioElement.src.includes(`${SongIndex + 1}.mp3`)) {
+            //conditions to tackle pause an resume
             if (AudioElement.paused) {
                 AudioElement.play();
                 e.target.classList.remove('fa-play');
@@ -177,6 +183,7 @@ Array.from(document.getElementsByClassName('SongItemPlay')).forEach((element) =>
                 MasterPlay.classList.add('fa-pause');
                 showGifForSong(SongIndex);
                 SetRowIcon(SongIndex, true);
+                
             }
             else {
                 AudioElement.pause();
@@ -189,13 +196,16 @@ Array.from(document.getElementsByClassName('SongItemPlay')).forEach((element) =>
                 SetRowIcon(SongIndex, false);
             }
         }
+        // if new icon is pressed playing that song based upon the index
         else {
             loadAndPlay(SongIndex);
         }
     });
 });
 
+// configuring the next icon to play the next song from the current index
 document.getElementById('next').addEventListener('click', () => {
+    //toggling
     if (SongIndex >= 11) {
         SongIndex = 0;
     }
@@ -204,6 +214,7 @@ document.getElementById('next').addEventListener('click', () => {
     }
     loadAndPlay(SongIndex);
 })
+// configuring the next icon to play the previous song from the current index
 document.getElementById('previous').addEventListener('click', () => {
     if (SongIndex <= 0) {
         SongIndex = 0;
@@ -213,6 +224,14 @@ document.getElementById('previous').addEventListener('click', () => {
     }
     loadAndPlay(SongIndex);
 })
+
+//updating the song when song ends and play the next song
 AudioElement.addEventListener("ended", () => {
-    gifContainer.style.opacity = 0;
+    if (SongIndex >= 11) {
+        SongIndex = 0;
+    }
+    else {
+        SongIndex += 1;
+    }
+    loadAndPlay(SongIndex);
 });
