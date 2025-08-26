@@ -1,10 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    background-color: #239BA7;
+}
 *{
     margin: 0;
     padding: 0;
 }
+#greeting{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    flex-direction: column;
+}
+/* home page */
+.instruction{
+    max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    color: #054d53;
+    background-color: #ECECBB;
+    font-family: "Inter";
+    border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.instruction ul {
+    color: #3d8e96;
+  
+  font-size: 0.8rem;
+  letter-spacing: 1px
+}
+.instruction p {
+    color: #3d8e96;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+}
+#play{
+    height: 50px;
+    width: 200px;
+    border-radius: 9px;
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: #2e6a70;
+    background-color: #85faa3;
+    cursor: pointer;
+}
+#home{
+    height: 50px;
+    width: 100px;
+    border-radius: 50px;
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: #2e6a70;
+    background-color: #85faa3;
+    cursor: pointer;
+}
+#instruction{
+    height: 50px;
+    width: 200px;
+    border-radius: 9px;
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: #2e6a70;
+    background-color: #85faa3;
+    cursor: pointer;
+}
 nav{
-    background-color: black;
+    background-color: #7ADAA5;
     height: 50px;
     color: white;
     font-size: 25px;
@@ -18,10 +89,13 @@ nav ul{
 }
 
 .GameContainer{
-    background-color: palegoldenrod;
+    background-color: #ECECBB;
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 1100px;
+    margin: 50px 100px;
 }
 
 .Container{
@@ -29,6 +103,27 @@ nav ul{
     grid-template-rows: repeat(3,10vw);
     grid-template-columns: repeat(3,10vw);
     font-family: "Roboto", sans-serif;
+    position: relative;
+}
+
+.line{
+    background-color: black;
+    height: 3px;
+    width: 0;
+    position: absolute;
+    background-color: #911d91;
+    transition: width 1s ease-in-out;
+    transform: translate(5vw,15vw) rotate(135deg);
+}
+#Replay {
+    margin: 5px 5px;
+    padding: 5px 5px;
+    border-radius: 9px;
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: #2e6a70;
+    background-color: #85faa3;
+    cursor: pointer;
 }
 .Box{
     border: 2px solid black;
@@ -42,12 +137,23 @@ nav ul{
     background:rgb(230, 226, 195);
 }
 .GameInfo{
-    padding: 0 30px;
+    padding: 88px 30px;
     font-family: "Inter",sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-
+.update{
+    margin: 10px 10px;
+    padding: 1px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .imgbox img{
-    display: none;
+    width: 0;
+    transition: width 1s ease-in-out;
 }
 
 /* utility classes */
@@ -64,3 +170,21 @@ nav ul{
 .bb-0{
     border-bottom: 0;
 }
+    @media screen and (max-width: 800px) {
+      /* Styles for screens up to 768px wide */
+      .GameContainer{
+        flex-wrap: wrap;
+      }
+      .GameInfo{
+        margin-top: -24px;
+      }
+      .Container{
+        display: grid;
+    grid-template-rows: repeat(3,20vw);
+    grid-template-columns: repeat(3,20vw);
+      }
+      .btn{
+        height: 20px;
+        width: 30px;
+      }
+    }
