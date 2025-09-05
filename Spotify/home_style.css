@@ -1,5 +1,5 @@
 body{
-    background: url('bg4.jpg');
+    background: url('/Spotify/Backgrounds/bg4.jpg');
     background-size: 100%;
     background-position-y: top;
 }
@@ -82,7 +82,7 @@ input#MyProgressBar {
 .AlbumItem{
     height: 50px;
     display: flex;
-    width: 225%;
+    width: 180%;
     background-color: rgba(102, 111, 117, 0.233);
     color: white;
     justify-content: space-between;
@@ -92,6 +92,12 @@ input#MyProgressBar {
     font-size: 20px;
     padding: 12px;
     cursor: pointer;
+    text-decoration: none;
+}
+
+.AlbumItemContainer {
+    width: 100%;
+    text-decoration: none;
 }
 .AlbumItem:hover {
     background-color: rgba(184, 210, 230, 0.473);

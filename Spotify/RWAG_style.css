@@ -1,17 +1,7 @@
-#KhanaBadosh {
-    background: url('bg2.jpg');
+body {
+    background: url("/Spotify/Backgrounds/bg6.jpg");
     background-repeat: repeat-x;
     background-size: 100%;
-}
-#Home{
-    background: url('bg4.jpg');
-    background-size: 100%;
-    background-position-y: top;
-}
-#About{
-    background: url('bg4.jpg');
-    background-size: 100%;
-    background-position-y: top;
 }
 * {
     margin: 0;
@@ -48,16 +38,14 @@ nav a{
     height: 55px;
     padding: 8px;
 }
-
-/* containers */
-.containerKB {
-    min-height: 60vh;
-    color: white;
+.container {
+    min-height: 80vh;
+    color: rgb(0, 0, 0);
     font-family: "Inter", sans-serif;
-    background: url("bg3.jpg");
+    background: url("/Spotify/Backgrounds/bg5.jpg");
     background-repeat: no-repeat;
     background-position: right;
-    background-color: #00000090;
+    background-color: #b9b8b890;
     background-size: 468px;
     display: flex;
     width: 70%;
@@ -65,22 +53,6 @@ nav a{
     border-radius: 34px;
     padding: 34px;
 }
-
-.containerH{
-    min-height: 60vh;
-    color: white;
-    font-family: "Montserrat", sans-serif;
-    background-repeat: no-repeat;
-    background-position: right;
-    background-color: #00000090;
-    background-size: 468px;
-    display: flex;
-    width: 70%;
-    margin: 25px auto;
-    border-radius: 34px;
-    padding: 34px;
-}
-
 /* bottom class */
 .bottom {
     position:sticky;
@@ -94,7 +66,6 @@ nav a{
     bottom: 0;
     color: aliceblue;
 }
-
 .icons {
     margin-top: 15px;
 }
@@ -106,30 +77,12 @@ nav a{
 input#MyProgressBar {
     width: 80vw;
 }
-
-.AlbumItem{
-    height: 50px;
-    display: flex;
-    width: 154%;
-    background-color: rgba(102, 111, 117, 0.233);
-    color: white;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 15px;
-    margin: 20px 0;
-    font-size: 20px;
-    padding: 12px;
-    cursor: pointer;
-}
-.AlbumItem:hover {
-    background-color: rgba(184, 210, 230, 0.473);
-}
 .SongItem {
     height: 35px;
     display: flex;
-    width: 55%;
-    background-color: rgba(102, 111, 117, 0.233);
-    color: white;
+    width: 100%;
+    background-color: rgb(42, 43, 43);
+    color: rgb(255, 255, 255);
     justify-content: space-between;
     align-items: center;
     border-radius: 15px;
@@ -143,28 +96,13 @@ input#MyProgressBar {
     margin: 0 23px;
     border-radius: 6px;
 }
-.AlbumItem img {
-    width: 50px;
-    margin: 0 23px;
-    border-radius: 6px;
-}
-
 .SongItem i {
     cursor: pointer;
-    color: rgb(201, 186, 186);
+    color: rgb(235, 218, 218);
 }
 .SongItem i:hover {
     color: rgb(255, 255, 255);
 }
-.AlbumItem i{
-    cursor: pointer;
-    color: rgb(201, 186, 186);
-}
-.AlbumItem i:hover{
-    color: rgb(255, 255, 255);
-}
-
-
 .SongItemContainer {
     margin-top: 50px;
 }

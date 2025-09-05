@@ -9,18 +9,18 @@ let SongItems = Array.from(document.getElementsByClassName('SongItem'));
 
 // list of the song name , paths to the songs aand cover images 
 let songs = [
-    { SongName: "1. Gardish", FilePath: "Khana Badosh/1.mp3", CoverPath: "coverKB.jpeg", SongDuration: "6:02" },
-    { SongName: "2. Darja hararat", FilePath: "Khana Badosh/2.mp3", CoverPath: "coverKB.jpeg", SongDuration: "3:55" },
-    { SongName: "3. Manzar Kashi", FilePath: "Khana Badosh/3.mp3", CoverPath: "coverKB.jpeg", SongDuration: "5:15" },
-    { SongName: "4. Bandish", FilePath: "Khana Badosh/4.mp3", CoverPath: "coverKB.jpeg", SongDuration: "4:53" },
-    { SongName: "5. Khana Badosh", FilePath: "Khana Badosh/5.mp3", CoverPath: "coverKB.jpeg", SongDuration: "6:36" },
-    { SongName: "6. Khafa", FilePath: "Khana Badosh/6.mp3", CoverPath: "coverKB.jpeg", SongDuration: "6:14" },
-    { SongName: "7. Gulshan", FilePath: "Khana Badosh/7.mp3", CoverPath: "coverKB.jpeg", SongDuration: "5:09" },
-    { SongName: "8. Aarzu", FilePath: "Khana Badosh/8.mp3", CoverPath: "coverKB.jpeg", SongDuration: "4:48" },
-    { SongName: "9. Shayar", FilePath: "Khana Badosh/9.mp3", CoverPath: "coverKB.jpeg", SongDuration: "4:20" },
-    { SongName: "10. Raabta", FilePath: "Khana Badosh/10.mp3", CoverPath: "coverKB.jpeg", SongDuration: "4:46" },
-    { SongName: "11. Mutaasir", FilePath: "Khana Badosh/11.mp3", CoverPath: "coverKB.jpeg", SongDuration: "5:34" },
-    { SongName: "12. Iltija", FilePath: "Khana Badosh/12.mp3", CoverPath: "coverKB.jpeg", SongDuration: "5:18" },
+    { SongName: "1. Gardish", FilePath: "Khana Badosh/1.mp3", CoverPath: "/Spotify/Cover/coverKB.jpeg", SongDuration: "6:02" },
+    { SongName: "2. Darja hararat", FilePath: "Khana Badosh/2.mp3", CoverPath: "/Spotify/Cover/coverKB.jpeg", SongDuration: "3:55" },
+    { SongName: "3. Manzar Kashi", FilePath: "Khana Badosh/3.mp3", CoverPath: "/Spotify/Cover/coverKB.jpeg", SongDuration: "5:15" },
+    { SongName: "4. Bandish", FilePath: "Khana Badosh/4.mp3", CoverPath: "/Spotify/Cover/coverKB.jpeg", SongDuration: "4:53" },
+    { SongName: "5. Khana Badosh", FilePath: "Khana Badosh/5.mp3", CoverPath: "/Spotify/Cover/coverKB.jpeg", SongDuration: "6:36" },
+    { SongName: "6. Khafa", FilePath: "Khana Badosh/6.mp3", CoverPath: "/Spotify/Cover/coverKB.jpeg", SongDuration: "6:14" },
+    { SongName: "7. Gulshan", FilePath: "Khana Badosh/7.mp3", CoverPath: "/Spotify/Cover/coverKB.jpeg", SongDuration: "5:09" },
+    { SongName: "8. Aarzu", FilePath: "Khana Badosh/8.mp3", CoverPath: "/Spotify/Cover/coverKB.jpeg", SongDuration: "4:48" },
+    { SongName: "9. Shayar", FilePath: "Khana Badosh/9.mp3", CoverPath: "/Spotify/Cover/coverKB.jpeg", SongDuration: "4:20" },
+    { SongName: "10. Raabta", FilePath: "Khana Badosh/10.mp3", CoverPath: "/Spotify/Cover/coverKB.jpeg", SongDuration: "4:46" },
+    { SongName: "11. Mutaasir", FilePath: "Khana Badosh/11.mp3", CoverPath: "/Spotify/Cover/coverKB.jpeg", SongDuration: "5:34" },
+    { SongName: "12. Iltija", FilePath: "Khana Badosh/12.mp3", CoverPath: "/Spotify/Cover/coverKB.jpeg", SongDuration: "5:18" },
 ]
 
 // filling in the name of the songs and their durations on the display

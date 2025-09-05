@@ -1,8 +1,6 @@
-console.log("Welcome to Spotify");
-if(document.body.id=='KhanaBadosh'){
-    //Initialize the variables
+//Initialize the variables
 let SongIndex = 0;
-let AudioElement = new Audio('Khana Badosh/1.mp3');
+let AudioElement = new Audio('RWAG/1.mp3');
 let MasterPlay = document.getElementById('MasterPlay');
 let MyProgressBar = document.getElementById('MyProgressBar');
 let gif = document.getElementById('gif');
@@ -11,18 +9,27 @@ let SongItems = Array.from(document.getElementsByClassName('SongItem'));
 
 // list of the song name , paths to the songs aand cover images 
 let songs = [
-    { SongName: "1. Gardish", FilePath: "Khana Badosh/1.mp3", CoverPath: "coverKB.jpeg", SongDuration: "6:02" },
-    { SongName: "2. Darja hararat", FilePath: "Khana Badosh/2.mp3", CoverPath: "coverKB.jpeg", SongDuration: "3:55" },
-    { SongName: "3. Manzar Kashi", FilePath: "Khana Badosh/3.mp3", CoverPath: "coverKB.jpeg", SongDuration: "5:15" },
-    { SongName: "4. Bandish", FilePath: "Khana Badosh/4.mp3", CoverPath: "coverKB.jpeg", SongDuration: "4:53" },
-    { SongName: "5. Khana Badosh", FilePath: "Khana Badosh/5.mp3", CoverPath: "coverKB.jpeg", SongDuration: "6:36" },
-    { SongName: "6. Khafa", FilePath: "Khana Badosh/6.mp3", CoverPath: "coverKB.jpeg", SongDuration: "6:14" },
-    { SongName: "7. Gulshan", FilePath: "Khana Badosh/7.mp3", CoverPath: "coverKB.jpeg", SongDuration: "5:09" },
-    { SongName: "8. Aarzu", FilePath: "Khana Badosh/8.mp3", CoverPath: "coverKB.jpeg", SongDuration: "4:48" },
-    { SongName: "9. Shayar", FilePath: "Khana Badosh/9.mp3", CoverPath: "coverKB.jpeg", SongDuration: "4:20" },
-    { SongName: "10. Raabta", FilePath: "Khana Badosh/10.mp3", CoverPath: "coverKB.jpeg", SongDuration: "4:46" },
-    { SongName: "11. Mutaasir", FilePath: "Khana Badosh/11.mp3", CoverPath: "coverKB.jpeg", SongDuration: "5:34" },
-    { SongName: "12. Iltija", FilePath: "Khana Badosh/12.mp3", CoverPath: "coverKB.jpeg", SongDuration: "5:18" },
+    { SongName: "1. Competition And Currency", FilePath: "RWAG/1.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "3:58" },
+    { SongName: "2. 6AM in Islamabad", FilePath: "RWAG/2.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "3:54" },
+    { SongName: "3. Obvious", FilePath: "RWAG/3.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "3:15" },
+    { SongName: "4. Duniya Cold", FilePath: "RWAG/4.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "3:07" },
+    { SongName: "5. Intentions", FilePath: "RWAG/5.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "4:13" },
+    { SongName: "6. Felony", FilePath: "RWAG/6.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "3:54" },
+    { SongName: "7. Dominos", FilePath: "RWAG/7.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "4:05" },
+    { SongName: "8. Broke Flex", FilePath: "RWAG/8.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "2:53" },
+    { SongName: "9. Day Dreamer", FilePath: "RWAG/9.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "4:24" },
+    { SongName: "10. 14th December,2003", FilePath: "RWAG/10.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "1:20" },
+    { SongName: "11. Thank GOD", FilePath: "RWAG/11.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "3:17" },
+    { SongName: "12. Come Through", FilePath: "RWAG/12.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "3:17" },
+    { SongName: "13. Lover Boy Romance", FilePath: "RWAG/1.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "3:17" },
+    { SongName: "14. Refunds", FilePath: "RWAG/1.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "4:16" },
+    { SongName: "15. Away From Me ", FilePath: "RWAG/1.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "2:36" },
+    { SongName: "16. Heartbreak City", FilePath: "RWAG/1.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "6:12" },
+    { SongName: "17. Ends", FilePath: "RWAG/1.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "2:59" },
+    { SongName: "18. Make you mine", FilePath: "RWAG/1.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "3:08" },
+    { SongName: "19. All we had", FilePath: "RWAG/1.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "3:00" },
+    { SongName: "20. Big Dawg thing", FilePath: "RWAG/1.mp3", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", SongDuration: "5:01" },
+    
 ]
 
 // filling in the name of the songs and their durations on the display
@@ -148,23 +155,6 @@ MyProgressBar.addEventListener('change', () => {
     }
 })
 
-
-/*Array.from(document.getElementsByClassName('SongItemPlay')).forEach((element) => {
-    element.addEventListener('click', (e) => {
-        MakeAllPlays();
-        SongIndex = parseInt(e.target.id);
-        MasterSongName.innerText = songs[SongIndex].SongName;
-        e.target.classList.remove('fa-play');
-        e.target.classList.add('fa-pause');
-        AudioElement.src = `Khana Badosh/${SongIndex + 1}.mp3`;
-        AudioElement.currentTime = 0;
-        AudioElement.play();
-        gif.style.opacity = 1;
-        MasterPlay.classList.remove('fa-play');
-        MasterPlay.classList.add('fa-pause');
-    });
-});*/
-
 //selection of song based upon clicking icon in the song list
 Array.from(document.getElementsByClassName('SongItemPlay')).forEach((element) => {
     element.addEventListener('click', (e) => {
@@ -235,37 +225,3 @@ AudioElement.addEventListener("ended", () => {
     }
     loadAndPlay(SongIndex);
 });
-
-}
-if (document.body.id == 'Home') {
-    let AlbumItems = Array.from(document.getElementsByClassName('AlbumItem'));
-
-//List of Albums
-let Albums = [
-    { AlbumName: "1. Khana Badosh", FilePath: "KB.html", CoverPath: "coverKB.jpeg", NumberOfSongs: "(12 Songs)" },
-]
-    // filling in the name of the albums on the display
-    AlbumItems.forEach((element,i)=>{
-        element.getElementsByTagName("img")[0].src=Albums[i].CoverPath;
-        element.getElementsByClassName("AlbumName")[0].innerText=Albums[i].AlbumName;
-        element.getElementsByClassName("SongNum")[0].innerText=Albums[i].NumberOfSongs;
-    })
-
-    // 1️⃣ When AlbumList anchor is clicked → go to album page
-    Array.from(document.getElementsByClassName('AlbumList')).forEach((element, i) => {
-        element.addEventListener('click', (e) => {
-            e.preventDefault(); // stop default navigation
-            window.location.href = Albums[i].FilePath; // redirect manually
-        });
-    });
-
-    //on click opening the album
-    Array.from(document.getElementsByClassName('AlbumItemPlay')).forEach((btn, i) => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            e.preventDefault(); 
-            window.location.href = Albums[i].FilePath + "?autoplay=1";
-        });
-    });
-
-}
