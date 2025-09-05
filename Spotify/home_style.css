@@ -1,14 +1,4 @@
-#KhanaBadosh {
-    background: url('bg2.jpg');
-    background-repeat: repeat-x;
-    background-size: 100%;
-}
-#Home{
-    background: url('bg4.jpg');
-    background-size: 100%;
-    background-position-y: top;
-}
-#About{
+body{
     background: url('bg4.jpg');
     background-size: 100%;
     background-position-y: top;
@@ -48,25 +38,7 @@ nav a{
     height: 55px;
     padding: 8px;
 }
-
-/* containers */
-.containerKB {
-    min-height: 60vh;
-    color: white;
-    font-family: "Inter", sans-serif;
-    background: url("bg3.jpg");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-color: #00000090;
-    background-size: 468px;
-    display: flex;
-    width: 70%;
-    margin: 25px auto;
-    border-radius: 34px;
-    padding: 34px;
-}
-
-.containerH{
+.container{
     min-height: 60vh;
     color: white;
     font-family: "Montserrat", sans-serif;
@@ -110,7 +82,7 @@ input#MyProgressBar {
 .AlbumItem{
     height: 50px;
     display: flex;
-    width: 154%;
+    width: 225%;
     background-color: rgba(102, 111, 117, 0.233);
     color: white;
     justify-content: space-between;
@@ -124,38 +96,13 @@ input#MyProgressBar {
 .AlbumItem:hover {
     background-color: rgba(184, 210, 230, 0.473);
 }
-.SongItem {
-    height: 35px;
-    display: flex;
-    width: 55%;
-    background-color: rgba(102, 111, 117, 0.233);
-    color: white;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 15px;
-    margin: 4px 0;
-}
-.SongItem:hover {
-    background-color: rgba(184, 210, 230, 0.473);
-}
-.SongItem img {
-    width: 30px;
-    margin: 0 23px;
-    border-radius: 6px;
-}
+
 .AlbumItem img {
     width: 50px;
     margin: 0 23px;
     border-radius: 6px;
 }
 
-.SongItem i {
-    cursor: pointer;
-    color: rgb(201, 186, 186);
-}
-.SongItem i:hover {
-    color: rgb(255, 255, 255);
-}
 .AlbumItem i{
     cursor: pointer;
     color: rgb(201, 186, 186);
@@ -163,29 +110,6 @@ input#MyProgressBar {
 .AlbumItem i:hover{
     color: rgb(255, 255, 255);
 }
-
-
-.SongItemContainer {
-    margin-top: 50px;
-}
-
-.TimeStamp {
-    margin: 0 25px;
-}
-
-.SongInfo {
-    position: absolute;
-    left: 10vw;
-    top: 40px;
-    padding: 5px;
-    background-color: rgba(240, 248, 255, 0.315);
-}
-
-.SongInfo img {
-    opacity: 0;
-    transition: opacity 0.4s ease-in;
-}
-
 #gifContainer{
     opacity: 0;
 }
