@@ -4,6 +4,7 @@ let AlbumItems = Array.from(document.getElementsByClassName('AlbumItem'));
 let Albums = [
     { AlbumName: "1. Khana Badosh", FilePath: "KB.html", CoverPath: "/Spotify/Cover/coverKB.jpeg", NumberOfSongs: "(12 Songs)" },
     { AlbumName: "2. Rockstar Without A Guitar ", FilePath: "RWAG.html", CoverPath: "/Spotify/Cover/coverRWAG.jpeg", NumberOfSongs: "(20 Songs)" },
+    { AlbumName: "3. Best Nasheeds ", FilePath: "Sweetie/index.html", CoverPath: "\\Spotify\\Sweetie\\bg1.jpg", NumberOfSongs: "(10 Songs)" },
 ]
     // filling in the name of the albums on the display
     AlbumItems.forEach((element,i)=>{
