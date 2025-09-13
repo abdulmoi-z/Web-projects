@@ -1,26 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <nav>
-        <ul>
-            <li>Tic Tac Toe</li>
-        </ul>
-    </nav>
-    <div class="home">
-        <div id="greeting"><h1>Welcome to Tic Tac Toe</h1>
-        <p style="font-size: 25px;">The best offline game </p></div>
-    <div class="btn"><a href="instruction.html"><button id="instruction" >Instructions</button></a></div>
-    <div class="btn"><a href="play.html"><button id="play">Play</button></a></div>
-    <script src="script.js"></script>
-    <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 398.89 477.9">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 398.89 477.9">
   <defs>
     <style>
       .cls-1 {
@@ -38,24 +17,4 @@
       </g>
     </g>
   </g>
-  <defs>
-    <style>
-      .cls-1 {
-        stroke-width: 0px;
-        fill: url(#grad1);
-      }
-    </style>
-    <!-- Define Gradient -->
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0e5a99; stop-opacity:1" />
-      <stop offset="40%" style="stop-color:#045d99; stop-opacity:1" />
-      <stop offset="70%" style="stop-color:#052364; stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#020746; stop-opacity:1" />
-    </linearGradient>
-  </defs>
 </svg>
-
-    </div>
-</body>
-
-</html>
